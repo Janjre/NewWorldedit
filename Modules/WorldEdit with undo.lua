@@ -1,29 +1,17 @@
 name = "World Edit"
 description = "World Edit for bedrock. Type .WEhelp for an explanation (The wand isn't an axe, it's a sword). All commands use the \".\" prefix."
 
---if selected.name == "stick" then                  
---  print("hi")
---  xface, yface, zface = player.selectedPos()
---  selectedblock = dimension.getBlock(xface,yface,zface)
---  SELBLOCKNAME = selectedblock.name
---  SELBLOCKDATA = selectedblock.data
---  if button == 2 then
---      NEWBLOCKDATA = SELBLOCKDATA+1
---  else
---      NEWBLOCKDATA = SELBLOCKDATA-1
---  end
---  NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
---  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
---  if NEWBLOCKSTATE == nil then
---     print("§eNo more block states, you can use left or right click to send it back/forward")
---    else
---        client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
---    end
---    print (NEWBLOCKSTATE)
---    do return true end
---end
 
---wedit for onix made by @Janjre (github name) mc username = HusdhedCandle753
+
+--                                                      wedit for onix made by @Janjre (github name) mc username = HusdhedCandle753
+
+
+
+
+
+
+
+
 function sleep(n)  -- seconds
     local clock = os.clock
    local t0 = clock()
