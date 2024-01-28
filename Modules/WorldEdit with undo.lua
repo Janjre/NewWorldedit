@@ -1149,7 +1149,7 @@ end
 
 function render(dt) 
     if checkingEffects then
-        if player.gamemode() == 4 then
+        if player.gamemode() == 6 then
             client.execute("execute gamemode c")
             woodSwordClick()
             checkingEffects = false
