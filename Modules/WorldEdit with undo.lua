@@ -23,7 +23,7 @@ description = "World Edit for bedrock. Type .WEhelp for an explanation (The wand
 --    do return true end
 --end
 
---wedit for onix made by @Janjre (github name) mc username = 
+--wedit for onix made by @Janjre (github name) mc username = HusdhedCandle753
 function sleep(n)  -- seconds
     local clock = os.clock
    local t0 = clock()
