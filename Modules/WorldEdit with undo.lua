@@ -31,7 +31,7 @@ function sleep(n)  -- seconds
    end
 end
 
-importLib("Wait.lua")
+
 importLib("auxToState.lua")
 xBlockList = {}
 yBlockList = {}
@@ -104,197 +104,197 @@ AreaVUI = client.settings.addInt("Area Size Warning","AreaV",500,50000)
 
 --help
 registerCommand("WEhelp", function(arguments)
-    if xpos1 == nil or xpos2 == nil then else
+   
     helpcmd(arguments)
-    end
+    
 end)
 
 registerCommand("wehelp", function(arguments)
-    if xpos1 == nil or xpos2 == nil then else
+
     helpcmd(arguments)
-    end
+
 end)
 
 registerCommand("WeHelp", function(arguments)
-    if xpos1 == nil or xpos2 == nil then else
+
     helpcmd(arguments)
-    end
+
 end)
 
 --fill
 registerCommand("fill", function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     fillcmd(arguments)
 end
 end)
 
 --replace
 registerCommand("replace",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     repalcecmd(arguments)
 end
 end)
 registerCommand("rep",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     repalcecmd(arguments)
 end
 end)
 
 --line
 registerCommand("line",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     linecmd(arguments)
 end
 end)
 
 --mirror
 registerCommand("mirror",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     mircmd(arguments)
 end
 end)
 registerCommand("mir",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     mircmd(arguments)
 end
 end)
 
 --wall
 registerCommand("wall",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     wallcmd(arguments)
 end
 end)
 
 -- infwater
 registerCommand("infinitewater",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     infwatercmd(arguments)
 end
 end)
 registerCommand("infwater",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     infwatercmd(arguments)
 end
 end)
 
 --circle 
 registerCommand("circle",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     circlecmd(arguments)
 end
 end)
 
 --sphere
 registerCommand("sphere",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     spherecmd(arguments)
 end
 end)
 
 --buildup
 registerCommand("buildup",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     bucmd(arguments)
 end
 end)
 registerCommand("build-up",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     bucmd(arguments)
 end
 end)
 
 registerCommand("bu",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     bucmd(arguments)
 end
 end)
 
 --pos1 and pos2
 registerCommand("pos1",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     pos1cmd(arguments)
-end
+
 end)
 registerCommand("pos2",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     pos2cmd(arguments)
-end
+
 end)
 
 --up
 registerCommand("up",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     upcmd(arguments)
-end
+
 end)
 
 --thrutool
 registerCommand("thrutool",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     thrutoolcmd(arguments)
-end
+
 end)
 
 --copy
 registerCommand("copy",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     copycmd(arguments)
 end
 end)
 
 --paste 
 registerCommand("paste",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     pastecmd(arguments)
 end
 end)
 
 --count
 registerCommand("count",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     countcmd(arguments)
 end
 end)
 
 --wand
 registerCommand("wand",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     wandcmd(arguments)
-end
+
 end)
 
 --selnear
 registerCommand("selnear",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     selnearcmd(arguments)
-end
+
 end)
 
 --rotate
 registerCommand("rot", function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     rotatecmd(arguments)
 end
 end)
 
 registerCommand("rotate", function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     rotatecmd(arguments)
 end
 end)
 
 --findstate
 registerCommand("findstate",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    if xpos1 == nil or xpos2 == nil then print("§ePlease select an area before running this command") else
     debugstick(arguments)
 end
 end)
 -- undo
 registerCommand("undo",function (arguments)
-    if xpos1 == nil or xpos2 == nil then else
+    
     undocmd()
-    end
+    
 end)
 -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                                     --                          USE .WEhelp TO GET AN EXPLANATION ON HOW TO USE
@@ -337,9 +337,8 @@ function woodSwordClick()
 
     xface, yface, zface = player.selectedPos()
 
-    --TEMPREM 
-    --[[
-    if ThruTool == true and button == 1 then
+    
+    if ThruTool == true then
         x,y,z = player.position()
         rotdeg, pitchdeg = player.rotation()
         
@@ -363,81 +362,82 @@ function woodSwordClick()
                 
             end
         end
-    else]]
+    else
         
     
 
-    if lmbDown then       --                                    LEFT MB
-        xpos1 = xface
-        ypos1 = yface
-        zpos1 = zface
-        
-        
-        if not MuteSel then
-            print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
+        if lmbDown then       --                                    LEFT MB
+            xpos1 = xface
+            ypos1 = yface
+            zpos1 = zface
+            
+            
+            if not MuteSel then
+                print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
+            end
+            do return true end 
         end
-        do return true end 
-    end
 
-    if rmbDown then                                          -- RIGHT MB
-        xpos2 = xface
-        ypos2 = yface
-        zpos2 = zface
-        if not MuteSel then
-            print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
+        if rmbDown then                                          -- RIGHT MB
+            xpos2 = xface
+            ypos2 = yface
+            zpos2 = zface
+            if not MuteSel then
+                print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
+            end
+            do return true end
         end
-        do return true end
-    end
 
-    if mmbDownUp then
-        cancelMMB =true
-        doit = true
-        xface, yface, zface = player.selectedPos()
-        selectedblock = dimension.getBlock(xface,yface,zface)
-        SELBLOCKNAME = selectedblock.name
-        SELBLOCKDATA = selectedblock.data
-        NEWBLOCKDATA = SELBLOCKDATA+1
-        
-        NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
-        --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
+        if mmbDownUp then
+            cancelMMB =true
+            doit = true
+            xface, yface, zface = player.selectedPos()
+            selectedblock = dimension.getBlock(xface,yface,zface)
+            SELBLOCKNAME = selectedblock.name
+            SELBLOCKDATA = selectedblock.data
+            NEWBLOCKDATA = SELBLOCKDATA+1
+            
+            NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
+            --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
 
-        if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
-        if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
+            if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
+            if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
 
-        if doit == true then
-            client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
-            client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+            if doit == true then
+                client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
+                client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+            end
+                
+            
+            --player.inventory().setSelectedSlot(sekectedSlot)
+            --    print (NEWBLOCKSTATE)
+            
         end
-               
-           
-        --player.inventory().setSelectedSlot(sekectedSlot)
-        --    print (NEWBLOCKSTATE)
-        
-    end
-    if mmbDownDown then
-        cancelMMB =true
-        doit = true
-        xface, yface, zface = player.selectedPos()
-        selectedblock = dimension.getBlock(xface,yface,zface)
-        SELBLOCKNAME = selectedblock.name
-        SELBLOCKDATA = selectedblock.data
-        NEWBLOCKDATA = SELBLOCKDATA-1
-        
-        NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
-        --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
+        if mmbDownDown then
+            cancelMMB =true
+            doit = true
+            xface, yface, zface = player.selectedPos()
+            selectedblock = dimension.getBlock(xface,yface,zface)
+            SELBLOCKNAME = selectedblock.name
+            SELBLOCKDATA = selectedblock.data
+            NEWBLOCKDATA = SELBLOCKDATA-1
+            
+            NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
+            --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
 
-        if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
-        if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
+            if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
+            if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
 
-        if doit == true then
-            client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
-            client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+            if doit == true then
+                client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
+                client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+            end
+                
+            
+            --player.inventory().setSelectedSlot(sekectedSlot)
+            --    print (NEWBLOCKSTATE)
+            
         end
-               
-           
-        --player.inventory().setSelectedSlot(sekectedSlot)
-        --    print (NEWBLOCKSTATE)
-        
     end
 end
 
@@ -537,26 +537,28 @@ function linecmd(args)
     arg = splitSpace(args)
     arg1 = arg[1]
     arrg2 = arg[2]
-    if arg2 == nil then arg2 = 1 end
-    xline, yline, zline = player.pposition()
-    yaw, pitch = player.rotation()
-    client.execute("execute /tp " .. xpos1 .. " " .. ypos1 .. " " .. zpos1 .. " facing " .. xpos2 .. " " .. ypos2 .. " " .. zpos2)
-    xdif = xpos1-xpos2
-    ydif = ypos1-ypos2
-    zdif = zpos1-zpos2
-    DISTANCE = math.sqrt(xdif*xdif+ydif*ydif+zdif*zdif)
-    if arg2 == nil then
-        arg2 = 1
-    end
-    for countofdis = 1, DISTANCE, tonumber (arg2) do
-        client.execute("execute /setblock ^ ^ ^" .. countofdis .. " " .. arg1)
-    end
-    client.execute("execute tp " .. xline .. " " .. yline .. " " .. zline .. " " .. yaw .. " " .. pitch)
-    if DingS then
-        playCustomSound("WEding.mp3")
-    end
-    if not MuteSucess then
-        print ("§aDrawn Line")
+    if arg1 == nil then print("§eYou need to specify a block") else
+        if arg2 == nil then arg2 = 1 end
+        xline, yline, zline = player.pposition()
+        yaw, pitch = player.rotation()
+        client.execute("execute /tp " .. xpos1 .. " " .. ypos1 .. " " .. zpos1 .. " facing " .. xpos2 .. " " .. ypos2 .. " " .. zpos2)
+        xdif = xpos1-xpos2
+        ydif = ypos1-ypos2
+        zdif = zpos1-zpos2
+        DISTANCE = math.sqrt(xdif*xdif+ydif*ydif+zdif*zdif)
+        if arg2 == nil then
+            arg2 = 1
+        end
+        for countofdis = 1, DISTANCE, tonumber (arg2) do
+            client.execute("execute /setblock ^ ^ ^" .. countofdis .. " " .. arg1)
+        end
+        client.execute("execute tp " .. xline .. " " .. yline .. " " .. zline .. " " .. yaw .. " " .. pitch)
+        if DingS then
+            playCustomSound("WEding.mp3")
+        end
+        if not MuteSucess then
+            print ("§aDrawn Line")
+        end
     end
 end
 
@@ -804,7 +806,7 @@ function helpcmd(args)
     dividerColor .. "------------------------------\n" ..
     keywordColor .. ".fill§r " .. dividerColor .. "| §7runs a normal fill command " .. dividerColor .. "| §7" .. usageColor .. ".fill§r <block>\n" ..
     keywordColor .. ".replace§r " .. dividerColor .. "| §7replaces all of the first argument's block to the second within the selected range " .. dividerColor .. "| §7" .. usageColor .. ".replace§r <replacewhat> <replacewith> <not>\n" ..
-    keywordColor .. ".line§r " .. dividerColor .. "| §7creates a line between the two selected points " .. dividerColor .. "| §7" .. usageColor .. ".line§r <block> [width/precision]\n" ..
+    keywordColor .. ".line§r " .. dividerColor .. "| §7creates a line between the two selected points " .. dividerColor .. "| §7" .. usageColor .. ".line§r <block> \n" ..
     keywordColor .. ".mirror§r " .. dividerColor .. "| §7mirrors one side of the blue line to the other. Doesn't work with block states" .. dividerColor .. "| §7" .. usageColor .. ".mirror§r\n" ..
     keywordColor .. ".wall§r " .. dividerColor .. "| §7creates a wall between two points " .. dividerColor .. "| §7" .. usageColor .. ".wall§r <block> [width/precision]\n" ..
     keywordColor .. ".infinitewater§r " .. dividerColor .. "| §7all non-source water blocks get turned into sources so can spread infinitely in any direction aside from up\n" ..
@@ -817,7 +819,7 @@ function helpcmd(args)
     keywordColor .. ".pos2§r " .. dividerColor .. "| §7same as pos1 " .. dividerColor .. "| §7" .. usageColor .. ".pos2§r\n" ..
     keywordColor .. ".up§r " .. dividerColor .. "| §7teleports you up a specified amount of blocks upward and places a block below you " .. dividerColor .. "| §7" .. usageColor .. ".up§r <height>\n" ..
     keywordColor .. ".thrutool§r " .. dividerColor .. "| §7when pressed against a block click and it will teleport you to the other side of the block/s (intended for going in and out of builds without using a door). Limit of 356 blocks " .. dividerColor .. "| §7" .. usageColor .. ".thrutool§r\n" ..
-    keywordColor .. ".selnear§r " .. dividerColor .. "| §7Selects an area with a radius of x. If given nothing will deafault to 10" .. dividerColor .. "| §7" .. usageColor .. ".selnear [radius] §r\n" ..
+    keywordColor .. ".selnear§r " .. dividerColor .. "| §7Selects an area with a radius of x. If given nothing will deafault to 10" .. dividerColor .. "| §7" .. usageColor .. ".selnear §r[radius] \n" ..
     dividerColor .. "------------------------------\n" ..
     keywordColor .. ".copy§r " .. dividerColor .. "| §7Copies the selected area to a file in ..scripts\\data " .. dividerColor .. "| §7" .. usageColor .. ".copy§r\n" ..
     keywordColor .. ".paste§r " .. dividerColor .. "| §7pastes the file in the file with no rotational changes. !!WARNING!! This function is laggy and doesn't work with block states on 1.20 blocks. If you're pasting very precisely or a large build, use structure blocks instead. " .. dividerColor .. "| §7" .. usageColor .. ".paste§r [true/false:skip/keep air]\n" ..
@@ -1039,6 +1041,7 @@ end
 
 
 function rotatecmd(args)
+    print("§eDon't use on anything big or that you like. This is in beta (and always will be)")
     arg = splitSpace(args)
     
     client.execute("execute /structure save rotatorClip " .. dothething())
@@ -1073,6 +1076,7 @@ end
 
 
 function mircmd(args)
+    print("§eDon't use this on anything big or that you like. This is in beta (and always will be)")
     arg = splitSpace(args)
     
     client.execute("execute /structure save rotatorClip " .. dothething())

@@ -44,12 +44,12 @@
                     "r": 1.0,
                     "rgb": false
                 },
-                "TextS": true,
+                "TextS": false,
                 "WhooshS": true,
                 "module.module.setting.key.name": 0,
                 "module.visual.setting.position.name": [
-                    50.0,
-                    50.0
+                    58.0,
+                    159.47000122070313
                 ],
                 "module.visual.setting.scale.name": 1.0
             }
