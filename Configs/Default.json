@@ -21,9 +21,9 @@
                     "r": 1.0,
                     "rgb": false
                 },
-                "DiagS": false,
+                "DiagS": true,
                 "DingS": true,
-                "MirS": false,
+                "MirS": true,
                 "Mirror Color": {
                     "a": 1.0,
                     "b": 1.0,
@@ -44,7 +44,7 @@
                     "r": 1.0,
                     "rgb": false
                 },
-                "TextS": false,
+                "TextS": true,
                 "WhooshS": true,
                 "module.module.setting.key.name": 0,
                 "module.visual.setting.position.name": [

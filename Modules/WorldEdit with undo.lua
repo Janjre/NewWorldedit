@@ -109,6 +109,18 @@ registerCommand("WEhelp", function(arguments)
     end
 end)
 
+registerCommand("wehelp", function(arguments)
+    if xpos1 == nil or xpos2 == nil then else
+    helpcmd(arguments)
+    end
+end)
+
+registerCommand("WeHelp", function(arguments)
+    if xpos1 == nil or xpos2 == nil then else
+    helpcmd(arguments)
+    end
+end)
+
 --fill
 registerCommand("fill", function (arguments)
     if xpos1 == nil or xpos2 == nil then else
@@ -791,7 +803,7 @@ function helpcmd(args)
     "When the syntax says \"block\", it means either something like \"dirt\" or something like \"50%dirt,50%air\"\n" ..
     dividerColor .. "------------------------------\n" ..
     keywordColor .. ".fill§r " .. dividerColor .. "| §7runs a normal fill command " .. dividerColor .. "| §7" .. usageColor .. ".fill§r <block>\n" ..
-    keywordColor .. ".replace§r " .. dividerColor .. "| §7replaces all of the first argument's block to the second within the selected range " .. dividerColor .. "| §7" .. usageColor .. ".replace§r <replacewhat> <replacewith>\n" ..
+    keywordColor .. ".replace§r " .. dividerColor .. "| §7replaces all of the first argument's block to the second within the selected range " .. dividerColor .. "| §7" .. usageColor .. ".replace§r <replacewhat> <replacewith> <not>\n" ..
     keywordColor .. ".line§r " .. dividerColor .. "| §7creates a line between the two selected points " .. dividerColor .. "| §7" .. usageColor .. ".line§r <block> [width/precision]\n" ..
     keywordColor .. ".mirror§r " .. dividerColor .. "| §7mirrors one side of the blue line to the other. Doesn't work with block states" .. dividerColor .. "| §7" .. usageColor .. ".mirror§r\n" ..
     keywordColor .. ".wall§r " .. dividerColor .. "| §7creates a wall between two points " .. dividerColor .. "| §7" .. usageColor .. ".wall§r <block> [width/precision]\n" ..
@@ -805,6 +817,7 @@ function helpcmd(args)
     keywordColor .. ".pos2§r " .. dividerColor .. "| §7same as pos1 " .. dividerColor .. "| §7" .. usageColor .. ".pos2§r\n" ..
     keywordColor .. ".up§r " .. dividerColor .. "| §7teleports you up a specified amount of blocks upward and places a block below you " .. dividerColor .. "| §7" .. usageColor .. ".up§r <height>\n" ..
     keywordColor .. ".thrutool§r " .. dividerColor .. "| §7when pressed against a block click and it will teleport you to the other side of the block/s (intended for going in and out of builds without using a door). Limit of 356 blocks " .. dividerColor .. "| §7" .. usageColor .. ".thrutool§r\n" ..
+    keywordColor .. ".selnear§r " .. dividerColor .. "| §7Selects an area with a radius of x. If given nothing will deafault to 10" .. dividerColor .. "| §7" .. usageColor .. ".selnear [radius] §r\n" ..
     dividerColor .. "------------------------------\n" ..
     keywordColor .. ".copy§r " .. dividerColor .. "| §7Copies the selected area to a file in ..scripts\\data " .. dividerColor .. "| §7" .. usageColor .. ".copy§r\n" ..
     keywordColor .. ".paste§r " .. dividerColor .. "| §7pastes the file in the file with no rotational changes. !!WARNING!! This function is laggy and doesn't work with block states on 1.20 blocks. If you're pasting very precisely or a large build, use structure blocks instead. " .. dividerColor .. "| §7" .. usageColor .. ".paste§r [true/false:skip/keep air]\n" ..
@@ -1011,13 +1024,17 @@ end
 
 
 function selnearcmd(args)
+    arg = splitSpace(args)
+    if arg[1]==nil then
+        arg[1] = 10
+    end
     x, y, z = player.position()
-    xpos1 = x - 10
-    xpos2 = x +10
-    ypos1 = y - 10
-    ypos2 = y +10
-    zpos1 = z -10
-    zpos2 = z +10
+    xpos1 = x - arg[1]
+    xpos2 = x + arg[1]
+    ypos1 = y - arg[1]
+    ypos2 = y + arg[1]
+    zpos1 = z - arg[1]
+    zpos2 = z + arg[1]
 end
 
 
