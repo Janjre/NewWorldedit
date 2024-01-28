@@ -1,0 +1,58 @@
+{
+    "modules": {
+        "World Edit": {
+            "enabled": true,
+            "settings": {
+                "AreaV": 5000,
+                "Box Color": {
+                    "a": 1.0,
+                    "b": 0.0,
+                    "chroma": false,
+                    "g": 1.0,
+                    "r": 0.0,
+                    "rgb": false
+                },
+                "BoxS": true,
+                "Diag Color": {
+                    "a": 1.0,
+                    "b": 0.0,
+                    "chroma": false,
+                    "g": 0.0,
+                    "r": 1.0,
+                    "rgb": false
+                },
+                "DiagS": false,
+                "DingS": true,
+                "MirS": false,
+                "Mirror Color": {
+                    "a": 1.0,
+                    "b": 1.0,
+                    "chroma": false,
+                    "g": 0.0,
+                    "r": 0.0,
+                    "rgb": false
+                },
+                "MuteFill": true,
+                "MuteSel": false,
+                "MuteSucess": false,
+                "SizeS": false,
+                "Text Color": {
+                    "a": 1.0,
+                    "b": 1.0,
+                    "chroma": false,
+                    "g": 1.0,
+                    "r": 1.0,
+                    "rgb": false
+                },
+                "TextS": false,
+                "WhooshS": true,
+                "module.module.setting.key.name": 0,
+                "module.visual.setting.position.name": [
+                    50.0,
+                    50.0
+                ],
+                "module.visual.setting.scale.name": 1.0
+            }
+        }
+    }
+}
