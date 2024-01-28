@@ -1114,7 +1114,7 @@ end
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
---                                                                                                                                                                              COMING SOON
+--                                                                                                                                                                              COMING SOONish
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -1122,29 +1122,29 @@ end
 
     
 function undocmd()
-   
+    print("§aComing soon!§c(ish)")
 
-    sameRnd = true
+    -- sameRnd = true
 
-    curRndUndo = rndBlockList[counterBlockNotList-1] 
-    if counterBlockNotList == 0 or counterBlockNotList == nil then
-        sameRnd = false
-    end
+    -- curRndUndo = rndBlockList[counterBlockNotList-1] 
+    -- if counterBlockNotList == 0 or counterBlockNotList == nil then
+    --     sameRnd = false
+    -- end
 
-    while sameRnd do
+    -- while sameRnd do
 
-        counterBlockNotList = counterBlockNotList - 1
+    --     counterBlockNotList = counterBlockNotList - 1
         
-        client.execute("execute /setblock " .. xBlockList[counterBlockNotList] .. " " .. yBlockList[counterBlockNotList] .. " " .. zBlockList[counterBlockNotList] .. " " .. blockBlockList[counterBlockNotList])
+    --     client.execute("execute /setblock " .. xBlockList[counterBlockNotList] .. " " .. yBlockList[counterBlockNotList] .. " " .. zBlockList[counterBlockNotList] .. " " .. blockBlockList[counterBlockNotList])
         
-        if counterBlockNotList == 0 or counterBlockNotList == nil then
-            sameRnd = false
-        else
-            if rndBlockList[counterBlockNotList-1] == curRndUndo then else
-                sameRnd = false
-            end
-        end
-    end
+    --     if counterBlockNotList == 0 or counterBlockNotList == nil then
+    --         sameRnd = false
+    --     else
+    --         if rndBlockList[counterBlockNotList-1] == curRndUndo then else
+    --             sameRnd = false
+    --         end
+    --     end
+    -- end
     
 
 
