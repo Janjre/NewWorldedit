@@ -470,14 +470,14 @@ function repalcecmd(args)
     arg = splitSpace(args)
     arg1 = arg[1]
     arg2 = arg[2]
+    arg3 = arg[3]
     replacewhat = arg1
     replacewith = arg2
     
     if args == 12345 then
         arg[1] = "water water"
         DingS = false
-        MuteSucess = true
-        
+        MuteSucess = true        
     end
 
     xstep=1
@@ -496,9 +496,19 @@ function repalcecmd(args)
     for xInSelectedRange = xpos1, xpos2, xstep do
         for yinSelectedRange = ypos1, ypos2, ystep do
             for zinSelectedRange = zpos1, zpos2, zstep do
-                if(dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name == replacewhat)then
-                    replacewither = blockfiguer(replacewith)
-                    client.execute("execute /setblock " .. tostring(xInSelectedRange).. " " ..tostring(yinSelectedRange).. " " .. tostring(zinSelectedRange) .. " " .. replacewither)
+                if arg3 == "not" then
+                    
+                    if(dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name == replacewhat)then else
+                        
+                        replacewither = blockfiguer(replacewith)
+                        client.execute("execute /setblock " .. tostring(xInSelectedRange).. " " ..tostring(yinSelectedRange).. " " .. tostring(zinSelectedRange) .. " " .. replacewither)
+                    end
+                else
+                    
+                    if(dimension.getBlock(xInSelectedRange,yinSelectedRange,zinSelectedRange).name == replacewhat)then
+                        replacewither = blockfiguer(replacewith)
+                        client.execute("execute /setblock " .. tostring(xInSelectedRange).. " " ..tostring(yinSelectedRange).. " " .. tostring(zinSelectedRange) .. " " .. replacewither)
+                    end
                 end
             end
         end
