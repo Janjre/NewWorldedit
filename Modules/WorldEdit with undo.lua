@@ -311,7 +311,7 @@ event.listen("MouseInput", function(button, down) --                    SECLECTI
             if down then
                 TimesDONE = 0
                 checkingEffects = true
-                client.execute("execute /gamemode s @s[hasitem={item=wooden_sword,location=slot.weapon.mainhand}]")
+                client.execute("execute /gamemode spectator @s[hasitem={item=wooden_sword,location=slot.weapon.mainhand}]")
             end
         end
         
@@ -1149,7 +1149,7 @@ end
 
 function render(dt) 
     if checkingEffects then
-        if player.gamemode() == 0 then
+        if player.gamemode() == 4 then
             client.execute("execute gamemode c")
             woodSwordClick()
             checkingEffects = false
