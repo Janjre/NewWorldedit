@@ -284,6 +284,13 @@ registerCommand("undo",function (arguments)
     undocmd()
     
 end)
+
+function onClickEvent(button,down)
+    print(player.inventory().at(0).name)
+end
+
+
+
 -- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                                                     --                          USE .WEhelp TO GET AN EXPLANATION ON HOW TO USE
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -293,143 +300,141 @@ sizeX = 180
 sizeY = 50
 
 event.listen("MouseInput", function(button, down) --                    SECLECTION
-    --sekectedSlot = player.inventory().selected()
-    cancelMMB  = false
+    print(player.inventory().selected-1)
+    print(getItemNbt(player.inventory().selected-1).strf)
+    -- onClickEvent(button,down)
+    -- selectedSlot = player.inventory().selected
+    -- cancelMMB  = false
+    -- print(selectedSlot)
+    -- print(player.inventory().at(0).count)
+    -- print(player.inventory().selectedItem().displayName)
+    -- player.inventory().modify().at()
+    -- print(player.inventory().at(selectedSlot).name)
+    if player.facingBlock() and gui.mouseGrabbed() == false and getItemNbt(player.inventory().selected).strf then
+   
+    
+        xface, yface, zface = player.selectedPos()
 
-    if player.facingBlock() then
-        if button == 1 and not player.getFlag(1) then lmbDown = down end
-        if button == 2 and not player.getFlag(1) then rmbDown = down end
-        if button == 2 and player.getFlag(1) then  mmbDownUp = down end 
-        if button == 1 and player.getFlag(1) then  mmbDownDown = down end 
-    
-
-    
-    
-    
-
-        if gui.mouseGrabbed() == false then
-            if down then
-                TimesDONE = 0
-                checkingEffects = true
-                client.execute("execute /gamemode spectator @s[hasitem={item=wooden_sword,location=slot.weapon.mainhand}]")
-            end
-        end
         
-    end
+        if ThruTool == true then
+            x,y,z = player.position()
+            rotdeg, pitchdeg = player.rotation()
+            
+            rot = math.rad(player.rotation()-180)
+            pit = math.rad(pitchdeg)
+            zz = math.cos(pit) * math.cos(rot)*-1
+            xx = math.cos(pit) * math.sin(rot)
+            yy = math.sin(pit)*-1
+            for I = 2, 356, 1 do
+                xxx = math.floor(x+xx*I+0.5)
+                zzz = math.floor(z+zz*I+0.5)
+                yyy = math.floor(y+yy*I+0.5) 
+                blockOfDoom = dimension.getBlock(xxx,yyy+1,zzz).name
+                if  blockOfDoom == "air" or blockOfDoom == "water" then
+                    client.execute("execute tp @s ".. xxx .. " " .. yyy+1 .. " " .. zzz)
+                    if WhooshS then
+                        playCustomSound("WEwhoosh.mp3")
+                    end
+                    
+                    break
+                    
+                end
+            end
+        else
+            
+        
+
+            if button == 1 and down then       --                                    LEFT MB
+                print("hi")
+                xpos1 = xface
+                ypos1 = yface
+                zpos1 = zface
+                print(xpos1)
+                
+                if not MuteSel then
+                    print("§bSet selection point 1")
+                end
+                do return true end 
+            end
+
+            if button == 2 and down then                                          -- RIGHT MB
+                xpos2 = xface
+                ypos2 = yface
+                zpos2 = zface
+                if not MuteSel then
+                    print("§cSet selection point 2")
+                end
+                do return true end
+            end
+
+            if button == 3 then
+                
+                xface, yface, zface = player.selectedPos()
+                selectedblock = dimension.getBlock(xface,yface,zface)
+                SELBLOCKNAME = selectedblock.name
+                SELBLOCKDATA = selectedblock.data
+                NEWBLOCKDATA = SELBLOCKDATA+1
+                
+                NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
+                --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
+
+                if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
+                if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
+
+                if doit == true then
+                    client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
+                    client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+                end
+                    
+                
+                --player.inventory().setSelectedSlot(sekectedSlot)
+                --    print (NEWBLOCKSTATE)
+                
+        
+            end
+        
+
+            
+        end
+end
 
 end) 
 
 
-function woodSwordClick()
+-- function woodSwordClick()
 
 
-    xface, yface, zface = player.selectedPos()
-
-    
-    if ThruTool == true then
-        x,y,z = player.position()
-        rotdeg, pitchdeg = player.rotation()
-        
-        rot = math.rad(player.rotation()-180)
-        pit = math.rad(pitchdeg)
-        zz = math.cos(pit) * math.cos(rot)*-1
-        xx = math.cos(pit) * math.sin(rot)
-        yy = math.sin(pit)*-1
-        for I = 2, 356, 1 do
-            xxx = math.floor(x+xx*I+0.5)
-            zzz = math.floor(z+zz*I+0.5)
-            yyy = math.floor(y+yy*I+0.5) 
-            blockOfDoom = dimension.getBlock(xxx,yyy+1,zzz).name
-            if  blockOfDoom == "air" or blockOfDoom == "water" then
-                client.execute("execute tp @s ".. xxx .. " " .. yyy+1 .. " " .. zzz)
-                if WhooshS then
-                    playCustomSound("WEwhoosh.mp3")
-                end
-                
-                break
-                
-            end
-        end
-    else
-        
-    
-
-        if lmbDown then       --                                    LEFT MB
-            xpos1 = xface
-            ypos1 = yface
-            zpos1 = zface
+--     x
+--         end
+--         if mmbDownDown then
+--             cancelMMB =true
+--             doit = true
+--             xface, yface, zface = player.selectedPos()
+--             selectedblock = dimension.getBlock(xface,yface,zface)
+--             SELBLOCKNAME = selectedblock.name
+--             SELBLOCKDATA = selectedblock.data
+--             NEWBLOCKDATA = SELBLOCKDATA-1
             
-            
-            if not MuteSel then
-                print(xpos1 .. " " .. ypos1 .. " " .. zpos1 .. "§b has been set as selection point 1")
-            end
-            do return true end 
-        end
+--             NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
+--             --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
 
-        if rmbDown then                                          -- RIGHT MB
-            xpos2 = xface
-            ypos2 = yface
-            zpos2 = zface
-            if not MuteSel then
-                print(xpos2 .. " " .. ypos2 .. " " .. zpos2 .. "§c has been set as selection point 2")
-            end
-            do return true end
-        end
+--             if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
+--             if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
 
-        if mmbDownUp then
-            cancelMMB =true
-            doit = true
-            xface, yface, zface = player.selectedPos()
-            selectedblock = dimension.getBlock(xface,yface,zface)
-            SELBLOCKNAME = selectedblock.name
-            SELBLOCKDATA = selectedblock.data
-            NEWBLOCKDATA = SELBLOCKDATA+1
-            
-            NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
-            --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
-
-            if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
-            if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
-
-            if doit == true then
-                client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
-                client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
-            end
+--             if doit == true then
+--                 client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
+--                 client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
+--             end
                 
             
-            --player.inventory().setSelectedSlot(sekectedSlot)
-            --    print (NEWBLOCKSTATE)
+--             --player.inventory().setSelectedSlot(sekectedSlot)
+--             --    print (NEWBLOCKSTATE)
             
-        end
-        if mmbDownDown then
-            cancelMMB =true
-            doit = true
-            xface, yface, zface = player.selectedPos()
-            selectedblock = dimension.getBlock(xface,yface,zface)
-            SELBLOCKNAME = selectedblock.name
-            SELBLOCKDATA = selectedblock.data
-            NEWBLOCKDATA = SELBLOCKDATA-1
-            
-            NEWBLOCKSTATE = convertAux(SELBLOCKNAME,NEWBLOCKDATA)
-            --  print(SELBLOCKDATA .. " " .. NEWBLOCKDATA .. " " .. SELBLOCKNAME )
+--         end
+--     end
+-- end
 
-            if NEWBLOCKSTATE == nil then NEWBLOCKSTATE = convertAux(SELBLOCKNAME,0) end
-            if NEWBLOCKSTATE == nil then client.execute("execute title @s actionbar §cThis block doesn't have any block states (this wont work on 1.20 blocks, fixing that soon but it takes a while)"); doit = false end
-
-            if doit == true then
-                client.execute("execute setblock " .. xface .. " " .. yface .. " " .. zface .. " " .. SELBLOCKNAME .. " " .. NEWBLOCKSTATE)
-                client.execute("execute title @s actionbar §a Block state changed to: §f".. NEWBLOCKSTATE)
-            end
-                
-            
-            --player.inventory().setSelectedSlot(sekectedSlot)
-            --    print (NEWBLOCKSTATE)
-            
-        end
-    end
-end
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --                                                                                                                                                          ACTUAL COMMANDS
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 function fillcmd(args)
@@ -1167,17 +1172,7 @@ end
 --================================================================================================================================================================================================================================================================================================================================================================================================
 
 function render(dt) 
-    if checkingEffects then
-        if player.gamemode() == 6 then
-            client.execute("execute gamemode c")
-            woodSwordClick()
-            checkingEffects = false
-        end
-        TimesDONE = TimesDONE +1
-        if TimesDONE == 200 then
-            checkEffects = false
-        end
-    end
+    
    
     AreaVUI.visible = SizeS
     DiagCUI.visible = DiagS
