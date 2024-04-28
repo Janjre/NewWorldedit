@@ -1,15 +1,187 @@
 {
     "modules": {
-        "World Edit": {
+        "Accurate stopwatch": {
             "enabled": true,
+            "favorite": false,
+            "settings": {
+                "Background colour": {
+                    "a": 0.501960813999176,
+                    "b": 0.0,
+                    "chroma": false,
+                    "g": 0.0,
+                    "r": 0.0,
+                    "rgb": false
+                },
+                "Text colour": {
+                    "a": 1.0,
+                    "b": 1.0,
+                    "chroma": false,
+                    "g": 1.0,
+                    "r": 1.0,
+                    "rgb": false
+                },
+                "_setting__105616063399437942": 2,
+                "_setting__1086335023529244512": 80,
+                "_setting__12970823066284934382": 79,
+                "_setting__1611961968050360499": true,
+                "_setting__17176051324315051295": 73,
+                "module.module.setting.key.name": 0,
+                "module.visual.setting.position.name": [
+                    0.0,
+                    40.0
+                ],
+                "module.visual.setting.scale.name": 1.0
+            }
+        },
+        "Better Camera": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "_setting__11825486262506656708": false,
+                "_setting__12157608365298494284": false,
+                "_setting__12561151046632739936": 2.319489002227783,
+                "_setting__15385227185021009407": false,
+                "_setting__16957997559471974283": true,
+                "_setting__3195485907371160261": 0.440895140171051,
+                "_setting__6533493229526105267": 25.30351448059082,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "ChatLogger": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Copy Last Message": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "_setting__14487640911992626540": 75,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Cube craft teseting": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Freecam": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "module.module.setting.key.name": 0,
+                "testButton": 188
+            }
+        },
+        "Get Block state": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Image Generator jqms": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "imageHeight": 371,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Inventory Tweaks": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "_setting__129263077168886176": 81,
+                "_setting__13034497948314603988": true,
+                "_setting__14751672949769017614": 1,
+                "_setting__14777873731686308111": 16,
+                "_setting__17713763209521563239": true,
+                "_setting__17905262541099230243": true,
+                "_setting__2106367356243698230": 2,
+                "_setting__6441956667561918706": true,
+                "_setting__8495716632583364742": true,
+                "_setting__9406395243654038813": true,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Java View Bobbing": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "_setting__11385764978803481592": 1.0,
+                "_setting__11404349390280025385": 4.0,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Minimap v3": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "checkLimit": 50,
+                "module.module.setting.key.name": 0,
+                "module.visual.setting.position.name": [
+                    119.5,
+                    94.0
+                ],
+                "module.visual.setting.scale.name": 1.0,
+                "radius": 146
+            }
+        },
+        "Racing Replay": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Selected coords": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Skin editor": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "autoSave": false,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Skinstealer": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "_setting__12827351512218913815": false,
+                "_setting__15292256483872599244": false,
+                "_setting__16613894171184750283": false,
+                "_setting__16801015383468684115": 222,
+                "_setting__17277526186943121326": true,
+                "_setting__5783667870806941407": 3,
+                "_setting__7378333443957830708": false,
+                "_setting__9839599158341423445": false,
+                "_setting__9913722316820708127": false,
+                "module.module.setting.key.name": 0
+            }
+        },
+        "Skywars Helper": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Storage manager": {
+            "enabled": false,
+            "favorite": false
+        },
+        "Test module": {
+            "enabled": false,
+            "favorite": false
+        },
+        "W holder": {
+            "enabled": false,
+            "favorite": false
+        },
+        "World Edit": {
+            "enabled": false,
+            "favorite": false,
             "settings": {
                 "AreaV": 5000,
                 "Box Color": {
                     "a": 1.0,
-                    "b": 0.0,
+                    "b": 0.7983447909355164,
                     "chroma": false,
-                    "g": 1.0,
-                    "r": 0.0,
+                    "g": 0.0,
+                    "r": 0.4926614761352539,
                     "rgb": false
                 },
                 "BoxS": true,
@@ -46,13 +218,54 @@
                 },
                 "TextS": false,
                 "WhooshS": true,
-                "module.module.setting.key.name": 0,
+                "module.module.setting.key.name": 86,
                 "module.visual.setting.position.name": [
-                    58.0,
-                    159.47000122070313
+                    26.0,
+                    135.75
                 ],
                 "module.visual.setting.scale.name": 1.0
             }
+        },
+        "World Save": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "module.module.setting.key.name": 0,
+                "module.visual.setting.position.name": [
+                    122.0,
+                    0.0
+                ],
+                "module.visual.setting.scale.name": 1.0,
+                "r": 15
+            }
+        },
+        "figures colours": {
+            "enabled": false,
+            "favorite": false
+        },
+        "game 2048": {
+            "enabled": false,
+            "favorite": false,
+            "settings": {
+                "downKey": 34,
+                "leftKey": 37,
+                "module.module.setting.key.name": 75,
+                "module.visual.setting.position.name": [
+                    0.0,
+                    138.0
+                ],
+                "module.visual.setting.scale.name": 1.0,
+                "resetKey": 82,
+                "rightKey": 39,
+                "upKey": 33
+            }
+        },
+        "module.lua_command.name": {
+            "favorite": false
+        },
+        "three D Animate": {
+            "enabled": false,
+            "favorite": false
         }
     }
 }

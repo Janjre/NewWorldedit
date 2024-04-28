@@ -1,0 +1,62 @@
+attackDamages2 = {}
+attackDamage = 0
+for itemsInv = 1, 27 do
+    curItem = modInv.at("container_items",itemsInv)
+    
+    if curItem==nil then attackDamages2[itemsInv] = 0 else
+
+        if curItem.name == "wooden_sword" then
+            attackDamage = 4
+        
+        elseif curItem.name == "stone_sword" then
+            attackDamage = 5
+        
+        elseif curItem.name== "iron_sword" then
+             attackDamage = 6
+        
+        elseif curItem.name == "gold_sword" then
+            attackDamage = 4
+        
+        elseif curItem.name == "diamond_sword" then
+            attackDamage = 7
+        
+        elseif curItem.name == "netherite_sword" then
+            attackDamage = 8
+        elseif curItem.name == "trident" then
+            attackDamage = 8
+        end
+        if curItem.enchant == nil then else
+            for enchants = 1, #curItem.enchant do
+                curEnch = curItem.enchant[enchants]
+                if curEnch.name=="sharpness" then
+                    attackDamage = attackDamage + curEnch.level
+                end
+                if curEnch.name == "fire_aspect" then 
+                    attackDamage = attackDamage + 3
+                end
+            end
+            if attackDamage == nil then
+                attackDamage = 0 
+            end
+
+            attackDamages2[itemsInv] = attackDamage
+        end
+    end
+
+    
+    
+    
+    slotLarge2 = 0
+    curLarge2 = 0
+    print(attackDamages2.strf)
+    for findLarge = 1, #attackDamages2 do
+        if curLarge2 == nil then curLarge2 = 1 end
+        if attackDamages2[findLarge] >= curLarge2 then
+            curLarge2 = attackDamages2[findLarge]
+            slotLarge2 = findLarge
+            print("found large")
+        end
+    end
+end
+
+

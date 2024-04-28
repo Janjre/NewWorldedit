@@ -39,15 +39,18 @@ function dimension.isRaining() end
 function dimension.sound(x, y, z, name) end
 
 ---@class LightPair
----@field blockLight integer The light level caused by torches and stuff
----@field skyLight integer The light level of the environement (will not adapt to time)
+---@field block integer The light level caused by torches and stuff
+---@field sky integer The light level of the environement (will not adapt to time)
 
 
 ---@class Block
 ---@field id integer The numerical identifier of the block (changes with versions)
 ---@field data integer The data of the block: example the color of the wool in a /setblock
 ---@field name string The name that would be used in /setblock
----@field state table The block state
+---@field state table The block state nbt
+---@field statestr table the block state nbt that contains str/strf members at every level
+---@field statenbtstr string The block state nbt as a string
+---@field statenbtstrf string The block state nbt as a formatted string
 ---@field hash integer Unique hash for the block (not including state)
 
 ---@class Biome
@@ -80,25 +83,25 @@ function dimension.getBlock(x, y, z) end
 ---Finds a block among the world 
 ---local positons = result[1] change the 1 to whatever index you wish to use! you can use the # operator to get the size (#result)
 ---@param name string The name of the block
----@return integer[][] blockPositions The block information
+---@return integer[][] blockPositions table of integer[] of 3 representing x,y,z
 function dimension.findBlock(name) end
 
----Finds a block among the world 
+---Finds a block among the world with data
 ---local positons = result[1] change the 1 to whatever index you wish to use! you can use the # operator to get the size (#result)
 ---@param name string The name of the block
 ---@param blockData integer | number The data of the block
----@return integer[][] blockPositions The block information
+---@return integer[][] blockPositions table of integer[] of 3 representing x,y,z
 function dimension.findBlock(name, blockData) end
 
----Finds a block among the world 
+---Finds a block among the world with a radius
 ---local positons = result[1] change the 1 to whatever index you wish to use! you can use the # operator to get the size (#result)
 ---@param name string The name of the block
 ---@param blockData integer | number The data of the block
 ---@param radius integer | number The radius to search in (will be chunk aligned to then center of the chunk
----@return integer[][] blockPositions The block information
+---@return integer[][] blockPositions table of integer[] of 3 representing x,y,z
 function dimension.findBlock(name, blockData, radius) end
 
----Finds a block among the world 
+---Finds a block among the world with a radius and a center
 ---local positons = result[1] change the 1 to whatever index you wish to use! you can use the # operator to get the size (#result)
 ---@param name string The name of the block
 ---@param blockData integer | number The data of the block
@@ -106,25 +109,31 @@ function dimension.findBlock(name, blockData, radius) end
 ---@param x integer | number The x center position
 ---@param y integer | number The y center position
 ---@param z integer | number The z center position
----@return integer[][] blockPositions The block information
+---@return integer[][] blockPositions table of integer[] of 3 representing x,y,z
 function dimension.findBlock(name, blockData, radius, x, y, z) end
 
----Finds a block among the world 
----local x,y,z = result[1] change the 1 to whatever index you wish to use! you can use the # operator to get the size (#result)
+---Gives you the height of the the block that would be chosen by the game to generate map data
+---This is pretty much the height of the world but chests or glass or torches arent included
+---@param x integer | number The x position
+---@param z integer | number The z position
+---@return integer y The height of the world
+function dimension.getMapHeight(x, z) end
+
+---Gets the color of the water and grass at these coordinates
 ---@param x integer | number The x center position
 ---@param y integer | number The y center position
 ---@param z integer | number The z center position
 ---@return BiomeColorData colorData The color of the water and grass at this x,z
 function dimension.getBiomeColor(x, y, z) end
 
----Gets the block at these coordinates
+---Gets the block entity nbt at these coordinates
 ---@param x integer | number The x position
 ---@param y integer | number The y position
 ---@param z integer | number The z position
 ---@return table blockEntity The NBT of the block entity
 function dimension.getBlockEntity(x, y, z) end
 
----Gets the block entity nbt at these coordinates
+---Gets the block entity nbt at these coordinates and potentially on the server side
 ---@param x integer | number The x position
 ---@param y integer | number The y position
 ---@param z integer | number The z position
@@ -149,6 +158,17 @@ function dimension.getBiome(x, y, z) end
 ---@return integer b The blue part of the color
 ---@return integer a The opacity part of the color
 function dimension.getMapColor(x,y,z) end
+
+
+---Gets the world as a mcstructure
+---@param startX integer The x start position
+---@param startY integer The y start position
+---@param startZ integer The z start position
+---@param endX integer The x end position
+---@param endY integer The y end position
+---@param endZ integer The z end position
+---@return McStructure structure The structure built from the world
+function dimension.mcstructure(startX, startY, startZ, endX, endY, endZ) end
 
 
 ---@class RaycastInfo
