@@ -2,6 +2,11 @@
 name = "Image Generator"
 description = "Change the image file \"toBuild.png\" to the image and then change the size settings"
 
+-- added: making it vertical
+
+
+-- ty jqms and flash for adding the preview andmaking it do it in the center and loading stuff at the right points.
+
 importLib("BlockRGB.lua")
 
 
@@ -48,7 +53,9 @@ registerCommand("build", function ()
                 local curBlock2 = RGBtoBlock(curColour2.r, curColour2.g, curColour2.b)
                 local offsetX = math.floor((j - img.width / 2) / widthStep)
                 local offsetZ = math.floor((i - img.height / 2) / heightStep)
+                local x, y, z = player.position()
                 if buildVertical == false then
+                    
                     client.execute("execute setblock " .. (xStartCoord + offsetX) .. " " .. (yStartCoord) .. " " .. (zStartCoord + offsetZ) .. " " .. curBlock2)
                 elseif zWall == true then
                     client.execute("execute setblock " .. (xStartCoord - offsetX) .. " " .. (yStartCoord - offsetZ) .. " " .. (zStartCoord) .. " " .. curBlock2)
@@ -66,6 +73,10 @@ needsUnload = false
 renderEverywhere = true
 registerCommand("buildCoords", function ()
     img = gfx2.loadImage("toBuild.png")
+    if img == nil then
+        print("Your image doesn't exist, put an image named toBuild.png in your data folder")
+        return
+    end
     needsUnload = true
     imageScale = imageHeight/img.height
     imageWidth = imageScale * img.width
